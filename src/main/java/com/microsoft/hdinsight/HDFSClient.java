@@ -21,6 +21,7 @@ public class HDFSClient {
         conf.addResource("hdfs-site.xml");
        //fs = FileSystem.get(new URI("hdfs://localhost:8020"), new Configuration(), "hdfs");
         fs = FileSystem.get(conf);
+        System.out.println("Home Directory:"+fs.getHomeDirectory());
         ugi = UserGroupInformation.getCurrentUser();
 
         fs = execute(new PrivilegedExceptionAction<FileSystem>() {
